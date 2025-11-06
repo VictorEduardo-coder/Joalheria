@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Coleção de Joias</title>
+    <link href="https://vecchiojoalheiros.com.br/blog_vecchio/wp-content/uploads/2022/06/AdobeStock_203153877-768x512.jpeg" rel="stylesheet">
+    <style>
+        :root{
+            --bg:#f8f6f4;
+            --card:#ffffff;
+            --accent:#b88e6f;
+            --muted:#7a7a7a;
+            --radius:12px;
+            --glass: rgba(255,255,255,0.6);
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+            background:linear-gradient(180deg,var(--bg),#fff);
+            color:#111;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            padding:32px;
+        }
+
+        header{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:16px;
+            max-width:1100px;
+            margin:0 auto 28px;
+            padding:8px 0;
+        }
+        .brand{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+        .logo{
+            width:56px;
+            height:56px;
+            border-radius:12px;
+            background:linear-gradient(135deg,#fffafa,#f5efe9);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-family:Playfair Display,serif;
+            font-weight:700;
+            color:var(--accent);
+            box-shadow:0 6px 18px rgba(0,0,0,0.08);
+            border:1px solid rgba(0,0,0,0.04);
+        }
+        h1{font-family:Playfair Display,serif;margin:0;font-size:20px}
+        .nav{
+            display:flex;
+            gap:12px;
+            align-items:center;
+        }
+        .nav a{
+            text-decoration:none;
+            color:var(--muted);
+            font-weight:600;
+            padding:8px 12px;
+            border-radius:10px;
+        }
+        .nav a.cta{
+            background:var(--accent);
+            color:#fff;
+            box-shadow:0 6px 18px rgba(184,142,111,0.18);
+        }
+
+        .hero{
+            max-width:1100px;
+            margin:0 auto 28px;
+            display:grid;
+            grid-template-columns:1fr 360px;
+            gap:28px;
+            align-items:center;
+        }
+        .hero-card{
+            background:var(--card);
+            padding:28px;
+            border-radius:var(--radius);
+            box-shadow:0 10px 30px rgba(17,17,17,0.06);
+            border:1px solid rgba(0,0,0,0.03);
+        }
+        .hero h2{
+            margin:0 0 12px 0;
+            font-family:Playfair Display,serif;
+            font-size:28px;
+            color:#0f0f0f;
+        }
+        .hero p{margin:0 0 18px;color:var(--muted);line-height:1.5}
+        .controls{
+            display:flex;
+            gap:12px;
+            flex-wrap:wrap;
+        }
+        .search{
+            flex:1;
+            display:flex;
+            gap:8px;
+        }
+        .search input{
+            flex:1;
+            padding:10px 12px;
+            border-radius:10px;
+            border:1px solid rgba(0,0,0,0.06);
+            background:var(--glass);
+        }
+        .btn{
+            background:var(--accent);
+            color:#fff;
+            border:none;
+            padding:10px 14px;
+            border-radius:10px;
+            font-weight:600;
+            cursor:pointer;
+        }
+
+        .sidebar{
+            background:linear-gradient(180deg,rgba(184,142,111,0.06),transparent);
+            border-radius:var(--radius);
+            padding:20px;
+            text-align:center;
+            border:1px solid rgba(184,142,111,0.08);
+            color:var(--muted);
+        }
+        .sidebar img{
+            max-width:100%;
+            border-radius:10px;
+            box-shadow:0 8px 20px rgba(17,17,17,0.06);
+            margin-bottom:12px;
+        }
+        .sidebar small{display:block;margin-bottom:12px}
+
+        main{
+            max-width:1100px;
+            margin:0 auto;
+        }
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:18px;
+        }
+        .product{
+            background:var(--card);
+            border-radius:14px;
+            padding:14px;
+            border:1px solid rgba(0,0,0,0.03);
+            transition:transform .18s ease,box-shadow .18s ease;
+            display:flex;
+            flex-direction:column;
+            gap:10px;
+        }
+        .product:hover{
+            transform:translateY(-6px);
+            box-shadow:0 20px 40px rgba(17,17,17,0.08);
+        }
+        .product img{
+            width:100%;
+            height:200px;
+            object-fit:cover;
+            border-radius:10px;
+        }
+        .meta{display:flex;justify-content:space-between;align-items:center;gap:10px}
+        .title{font-weight:600}
+        .price{color:var(--accent);font-weight:700}
+        .actions{display:flex;gap:8px}
+        .icon-btn{
+            padding:8px 10px;
+            border-radius:10px;
+            border:1px solid rgba(0,0,0,0.06);
+            background:transparent;
+            cursor:pointer;
+        }
+
+        footer{
+            max-width:1100px;
+            margin:28px auto 0;
+            padding-top:18px;
+            border-top:1px solid rgba(0,0,0,0.04);
+            color:var(--muted);
+            text-align:center;
+            font-size:14px;
+        }
+
+        @media (max-width:900px){
+            .hero{grid-template-columns:1fr}
+            .grid{grid-template-columns:repeat(2,1fr)}
+            body{padding:20px}
+        }
+        @media (max-width:520px){
+            .grid{grid-template-columns:1fr}
+            header{flex-direction:column;align-items:flex-start}
+            .nav{width:100%;justify-content:space-between}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <div class="logo">J</div>
+            <div>
+                <h1>Coleção de Joias</h1>
+                <small style="color:var(--muted);font-weight:600">Peças selecionadas com carinho</small>
+            </div>
+        </div>
+        <nav class="nav">
+            <a href="joalheria.html">Início</a>
+            <a href="contato.html">Contato</a>
+            <a href="Sobre.html" class="cta">Sobre</a>
+        </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-card">
+            <h2 id="hero-title">Elegância em cada detalhe</h2>
+            <p>Explore nossa seleção de anéis, brincos e colares. Design atemporal, materiais nobres e peças feitas para durar.</p>
+
+            <div class="controls">
+                <div class="search">
+                    <input type="search" placeholder="Buscar por peça, material ou coleção" aria-label="Buscar">
+                    <button class="btn">Buscar</button>
+                </div>
+                <button class="btn" style="background:#fff;color:var(--accent);border:1px solid rgba(184,142,111,0.12)">Filtrar</button>
+            </div>
+        </div>
+
+        <aside class="sidebar" aria-label="Destaque">
+            <img src="https://via.placeholder.com/360x200?text=Destaque" alt="Destaque da coleção">
+            <small>Destaque do mês</small>
+            <div style="font-weight:700;color:#0f0f0f">Colar Aurora</div>
+            <div style="margin-top:8px;color:var(--accent);font-weight:700">R$ 1.290,00</div>
+        </aside>
+    </section>
+
+    <main>
+        <div class="grid" role="list">
+            <article class="product" role="listitem">
+                <img src="https://via.placeholder.com/400x300?text=Anel+1" alt="Anel de ouro com pedra">
+                <div class="meta">
+                    <div>
+                        <div class="title">Anel Sol</div>
+                        <div style="color:var(--muted);font-size:13px">Ouro 18k • Pedra semi-preciosa</div>
+                    </div>
+                    <div class="price">R$ 890</div>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                    <small style="color:var(--muted)">Disponível</small>
+                    <div class="actions">
+                        <button class="icon-btn" title="Favoritar">❤</button>
+                        <button class="btn" style="padding:8px 12px">Adicionar</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product" role="listitem">
+                <img src="https://via.placeholder.com/400x300?text=Brinco+1" alt="Brinco delicado">
+                <div class="meta">
+                    <div>
+                        <div class="title">Brinco Luna</div>
+                        <div style="color:var(--muted);font-size:13px">Prata polida • Banho de ouro</div>
+                    </div>
+                    <div class="price">R$ 320</div>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                    <small style="color:var(--muted)">Em estoque</small>
+                    <div class="actions">
+                        <button class="icon-btn" title="Favoritar">❤</button>
+                        <button class="btn" style="padding:8px 12px">Adicionar</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product" role="listitem">
+                <img src="https://via.placeholder.com/400x300?text=Colar+1" alt="Colar sofisticado">
+                <div class="meta">
+                    <div>
+                        <div class="title">Colar Aurora</div>
+                        <div style="color:var(--muted);font-size:13px">Corrente veneziana • Pingente</div>
+                    </div>
+                    <div class="price">R$ 1.290</div>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                    <small style="color:var(--muted)">Esgotado</small>
+                    <div class="actions">
+                        <button class="icon-btn" title="Favoritar">❤</button>
+                        <button class="btn" style="padding:8px 12px" disabled>Indisponível</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product" role="listitem">
+                <img src="https://via.placeholder.com/400x300?text=Pulseira+1" alt="Pulseira fina">
+                <div class="meta">
+                    <div>
+                        <div class="title">Pulseira Eden</div>
+                        <div style="color:var(--muted);font-size:13px">Aço inox • Detalhe banhado</div>
+                    </div>
+                    <div class="price">R$ 450</div>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                    <small style="color:var(--muted)">Em estoque</small>
+                    <div class="actions">
+                        <button class="icon-btn" title="Favoritar">❤</button>
+                        <button class="btn" style="padding:8px 12px">Adicionar</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product" role="listitem">
+                <img src="https://via.placeholder.com/400x300?text=Anel+2" alt="Anel minimalista">
+                <div class="meta">
+                    <div>
+                        <div class="title">Anel Minimal</div>
+                        <div style="color:var(--muted);font-size:13px">Ouro rosé • Design fino</div>
+                    </div>
+                    <div class="price">R$ 760</div>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                    <small style="color:var(--muted)">Disponível</small>
+                    <div class="actions">
+                        <button class="icon-btn" title="Favoritar">❤</button>
+                        <button class="btn" style="padding:8px 12px">Adicionar</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product" role="listitem">
+                <img src="https://via.placeholder.com/400x300?text=Brinco+2" alt="Brinco clássico">
+                <div class="meta">
+                    <div>
+                        <div class="title">Brinco Clássico</div>
+                        <div style="color:var(--muted);font-size:13px">Ouro amarelo • Pérola</div>
+                    </div>
+                    <div class="price">R$ 980</div>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                    <small style="color:var(--muted)">Em estoque</small>
+                    <div class="actions">
+                        <button class="icon-btn" title="Favoritar">❤</button>
+                        <button class="btn" style="padding:8px 12px">Adicionar</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <footer>
+            © 2025 Lumière Joias — Todos os direitos reservados
+        </footer>
+    </main>
+</body>
+</html></article></div></article></aside></div></nav>

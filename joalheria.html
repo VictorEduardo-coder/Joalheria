@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumière Joias</title>
+  <style>
+    /* Estilos gerais */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #faf9f7;
+      color: #333;
+    }
+
+    header {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 20px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #c5a46d;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #c5a46d;
+    }
+
+    /* Banner */
+    .banner {
+      background-image: url('https://vecchiojoalheiros.com.br/blog_vecchio/wp-content/uploads/2022/06/AdobeStock_203153877-768x512.jpeg');
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .banner::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .banner-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner h2 {
+      font-size: 50px;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 15px;
+    }
+
+    .banner p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .banner a {
+      background-color: #c5a46d;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .banner a:hover {
+      background-color: #b3925d;
+    }
+
+    /* Produtos */
+    .produtos {
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    .produtos h3 {
+      font-size: 32px;
+      font-family: 'Playfair Display', serif;
+      color: #c5a46d;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    .produto {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .produto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .produto img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .produto h4 {
+      font-size: 20px;
+      margin: 15px 0 5px;
+      color: #333;
+    }
+
+    .produto p {
+      color: #c5a46d;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: #222;
+      color: #ddd;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #c5a46d;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .banner h2 {
+        font-size: 36px;
+      }
+
+      .banner p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Lumière Joias</h1>
+    <nav>
+      <ul>
+        <li><a href="joalheria.html">Início</a></li>
+        <li><a href="coleções.html ">Coleções</a></li>
+        <li><a href="Sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <div class="banner-content">
+      <h2>Elegância em Cada Detalhe</h2>
+      <p>Encontre a Joia que reflete sua essência com a gente.</p>
+      <a href="coleções.html">Conheça a Coleção</a>
+      
+    </div>
+  </section>
+
+  <section class="produtos">
+    <h3>Destaques</h3>
+    <div class="grid">
+      <div class="produto">
+        <img src="https://images.tcdn.com.br/img/img_prod/746662/anel_de_ouro_18k_coracao_3823_1_860e2e6c29eb763a355f09d9f0ccf635.jpg" alt="Anel de ouro">
+        <h4>Anel de Ouro</h4>
+        <p>R$ 1.290</p>
+      </div>
+
+      <div class="produto">
+        <img src="https://cdn.dooca.store/29054/products/lxqeawdgyhbsnjo7jhp3intynbthouwdble0_640x640+fill_ffffff.jpg?v=1686832941&webp=0" alt="Colar de diamantes">
+        <h4>Colar de Diamantes</h4>
+        <p>R$ 4.850</p>
+      </div>
+
+      <div class="produto">
+        <img src="https://images.tcdn.com.br/img/img_prod/349131/brinco_argola_fina_prata_925_3965_1_c7b0a7eecd39714e274ceff59ca6ea3b.jpg">
+        <h4>Brincos de Prata</h4>
+        <p>R$ 890</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Lumière Joias — Feito por <a href="#">Victor Eduardo</a>.</p>
+  </footer>
+
+</body>
+</html>

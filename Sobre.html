@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sobre — Joalheria Aurora</title>
+    <meta name="description" content="Conheça a Joalheria Aurora: tradição, design e sustentabilidade em peças autorais." />
+    <style>
+        :root{
+            --bg:#f8f7f5;
+            --card:#ffffff;
+            --accent:#b8860b;
+            --muted:#6b6b6b;
+            --radius:10px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color:#222;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            background:linear-gradient(180deg,var(--bg),#fff);
+            -webkit-font-smoothing:antialiased;
+            line-height:1.5;
+            padding:24px;
+        }
+        header{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:16px;
+            max-width:1100px;
+            margin:0 auto 24px;
+        }
+        .brand{
+            display:flex;
+            gap:12px;
+            align-items:center;
+            text-decoration:none;
+            color:inherit;
+        }
+        .logo{
+            width:56px;
+            height:56px;
+            border-radius:12px;
+            background:conic-gradient(from 180deg at 50% 50%, #f7e4b5, #ffd27a, #b8860b);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-weight:700;
+            color:#3a2b12;
+            box-shadow:0 4px 14px rgba(183,134,11,0.12);
+            flex-shrink:0;
+        }
+        nav a{
+            color:var(--muted);
+            text-decoration:none;
+            margin-left:16px;
+            font-size:0.95rem;
+        }
+        main{
+            max-width:1100px;
+            margin:0 auto;
+            display:grid;
+            gap:20px;
+        }
+        .hero{
+            background:var(--card);
+            padding:28px;
+            border-radius:var(--radius);
+            display:flex;
+            gap:24px;
+            align-items:center;
+            box-shadow:0 8px 30px rgba(0,0,0,0.04);
+        }
+        .hero .text{
+            flex:1;
+        }
+        .eyebrow{
+            color:var(--accent);
+            font-weight:600;
+            letter-spacing:0.06em;
+            font-size:0.85rem;
+        }
+        h1{
+            margin:8px 0 6px;
+            font-size:1.75rem;
+        }
+        p.lead{margin:0;color:var(--muted)}
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+            gap:16px;
+        }
+        .card{
+            background:var(--card);
+            padding:18px;
+            border-radius:12px;
+            box-shadow:0 6px 20px rgba(0,0,0,0.04);
+        }
+        .card h3{margin:0 0 8px;font-size:1.05rem}
+        .values{
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap;
+            margin-top:8px;
+        }
+        .chip{
+            background:#fff8e6;
+            color:#6b3f00;
+            padding:6px 10px;
+            border-radius:999px;
+            font-size:0.85rem;
+        }
+        .gallery{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:10px;
+        }
+        .thumb{
+            background:linear-gradient(135deg,#fff,#f3efe7);
+            height:120px;
+            border-radius:8px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:var(--muted);
+            font-size:0.9rem;
+        }
+        footer{
+            max-width:1100px;
+            margin:24px auto 0;
+            padding-top:12px;
+            border-top:1px solid #eee;
+            color:var(--muted);
+            font-size:0.95rem;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:12px;
+            flex-wrap:wrap;
+        }
+        a.button{
+            background:var(--accent);
+            color:#fff;
+            padding:10px 14px;
+            border-radius:10px;
+            text-decoration:none;
+            font-weight:600;
+        }
+        @media (max-width:720px){
+            .hero{flex-direction:column;align-items:flex-start}
+            .gallery{grid-template-columns:repeat(2,1fr)}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav aria-label="Navegação principal">
+            <a href="joalheria.html">Início</a>
+            <a href="Coleções.html">Coleção</a>
+            <a href="Contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="sobre-titulo">
+            <div class="text">
+                <div class="eyebrow">SOBRE NÓS</div>
+                <h1 id="sobre-titulo">Tradição e design em joias feitas à mão</h1>
+                <p class="lead">Desde 1998, a Joalheria Aurora cria peças que unem técnica tradicional a um olhar contemporâneo. Cada joia nasce de um processo artesanal, pensado para durar e contar uma história.</p>
+                <div style="margin-top:12px">
+                    <a class="button" href="mailto:contato@aurorajewels.com">Fale conosco</a>
+                </div>
+            </div>
+            <div style="width:320px;max-width:40%;">
+                <div style="background:linear-gradient(135deg,#fff7f0,#fff);padding:14px;border-radius:10px;">
+                    <strong>Ateliê</strong>
+                    <p style="margin:8px 0 0;color:var(--muted)">Localizado no centro histórico, nosso ateliê concentra design, produção e atendimento personalizado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cards" aria-label="Missão, Visão e Valores">
+            <article class="card" aria-labelledby="missao">
+                <h3 id="missao">Missão</h3>
+                <p>Oferecer joias autorais que valorizem a materialidade, o acabamento e a memória afetiva, com atenção à procedência dos materiais.</p>
+                <div class="values" aria-hidden="true">
+                    <span class="chip">Artesanal</span>
+                    <span class="chip">Durabilidade</span>
+                    <span class="chip">Design</span>
+                </div>
+            </article>
+
+            <article class="card" aria-labelledby="historico">
+                <h3 id="historico">Histórico</h3>
+                <p>Fundada pela ourives Maria Aurora, a marca cresceu mantendo oficinas próprias e tradutores técnicos que permitem criar peças únicas e sob medida.</p>
+            </article>
+
+            <article class="card" aria-labelledby="sustentabilidade">
+                <h3 id="sustentabilidade">Sustentabilidade</h3>
+                <p>Trabalhamos com metais reciclados quando possível e priorizamos fornecedores certificados, reduzindo desperdício e estimulando práticas responsáveis.</p>
+            </article>
+        </section>
+
+        <section class="card" aria-labelledby="processo">
+            <h2 id="processo" style="margin-top:0">Processo criativo e produção</h2>
+            <p style="color:var(--muted)">Do esboço ao polimento final: cada peça passa por desenho, prototipagem, fundição com controle de qualidade e acabamento manual. Aceitamos pedidos sob medida e restaurações.</p>
+        </section>
+
+        <section class="card" aria-labelledby="galeria">
+            <h2 id="galeria" style="margin-top:0">Galeria</h2>
+            <div class="gallery" aria-hidden="false">
+                <div class="thumb">Anéis</div>
+                <div class="thumb">Colares</div>
+                <div class="thumb">Brincos</div>
+                <div class="thumb">Peças sob medida</div>
+                <div class="thumb">Acabamento manual</div>
+                <div class="thumb">Detalhes</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>Joalheria Aurora © <span id="ano"></span> • Rua das Flores, 123 • (11) 99999-9999</div>
+        <div>
+            <a href="./Politica.html" style="margin-right:10px;color:var(--muted);text-decoration:none">Política de privacidade</a>
+            <a class="button" href="./Contato.html">Agende uma visita</a>
+        </div>
+    </footer>
+
+    <script>
+        // Atualiza ano do rodapé
+        document.getElementById('ano').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html></div>
