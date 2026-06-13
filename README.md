@@ -20,4 +20,5 @@ Este projeto foi construído utilizando as tecnologias base do desenvolvimento w
 Para visualizar o projeto em sua máquina, siga os passos abaixo:
 
 1. Clone o repositório:
+   ```bash
    git clone [https://github.com/VictorEduardo-coder/Joalheria.git](https://github.com/VictorEduardo-coder/Joalheria.git)
